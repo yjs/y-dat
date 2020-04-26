@@ -1,6 +1,6 @@
 # Dat connector for [Yjs](https://github.com/yjs/yjs)
 
-> Propagates document updates using the Dat protocol. WIP - not all details have been worked out yet.
+> Propagates document updates using the Dat protocol. WIP - not all details have been worked out yet. [Demo](https://demos.yjs.dev/prosemirror-dat/prosemirror-dat.html)
 
 * Uses hypercore data channels to exchange document updates and awareness information
 * Supports multiple users manipulating same date
@@ -60,7 +60,7 @@ const provider = new DatProvider(givenDatKey, ydoc, { Hypercore })
 
 ### Demos
 
-You can find a working demos in `y-dat/demo/`. Clone this repository and run `npm install && npm start`.
+You can find a working demos in `y-dat/demo/`. Clone this repository and run `npm install && npm start`. Another example can be found in [`yjs-demos/prosemirror-dat`](https://github.com/yjs/yjs-demos/tree/master/prosemirror-dat).
 
 The demo also works in nodejs. Run `node y-dat/demo/node-server.cjs --key 7b0d584fcdaf1de2e8c473393a31f52327793931e03b330f7393025146dc02fb` to listen to updates for a given key. Run `node y-dat/demo/node-server.cjs` to generate a new key.
 
