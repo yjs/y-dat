@@ -1,6 +1,6 @@
 {
   "name": "y-dat",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Dat provider for Yjs",
   "main": "./dist/y-dat.cjs",
   "types": "./dist/src/y-dat.d.ts",
