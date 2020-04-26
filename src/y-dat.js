@@ -139,7 +139,7 @@ const readAll = s => getStore(s).then(({ store, size }) => promise.create((resol
 
 export class DatProvider extends Observable {
   /**
-   * @param {Uint8Array|null} key
+   * @param {Uint8Array|string|null} key
    * @param {Y.Doc} doc
    * @param {object} [opts]
    * @param {awarenessProtocol.Awareness} [opts.awareness]
