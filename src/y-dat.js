@@ -172,7 +172,7 @@ export class DatProvider extends Observable {
         for (let i = 0; i < updates.length; i++) {
           Y.applyUpdate(doc, updates[i])
         }
-      }, this.dstore)
+      }, this.dstore, false)
       this.emit('loaded', [{ provider: this, doc }])
     })
     this._docUpdateHandler = (update, origin) => {
@@ -233,7 +233,7 @@ export class DatProvider extends Observable {
       encoding.writeVarUint8Array(encoderAwareness, awarenessProtocol.encodeAwarenessUpdate(this.awareness, changedClients))
       feed.extension('y-dat', Buffer.from(encoding.toUint8Array(encoderAwareness)))
     }
-    awareness.on('change', this._awarenessChangeHandler)
+    awareness.on('update', this._awarenessChangeHandler)
     this._syncPeerHandler = peer => {
       const encoder = encoding.createEncoder()
       encoding.writeVarUint(encoder, messageSync)
@@ -266,7 +266,7 @@ export class DatProvider extends Observable {
     this._destroyed = true
     this.syncedPeers = null
     this.doc.off('update', this._docUpdateHandler)
-    this.awareness.off('change', this._awarenessChangeHandler)
+    this.awareness.off('update', this._awarenessChangeHandler)
     // @ts-ignore
     this.feed.off('peer-add', this._syncPeerHandler)
     // @ts-ignore
